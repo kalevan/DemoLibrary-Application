@@ -17,6 +17,9 @@ android {
     }
 
     buildTypes {
+        debug {
+            isMinifyEnabled = false
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
@@ -41,19 +44,20 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 }
 
-publishing {
-    publications {
-        val sdkGroupId = "com.github.kalevan"
-        val sdkArtifactId = "testlibrary"
+afterEvaluate {
 
-        create<MavenPublication>("debug") {
-            groupId = sdkGroupId
-            artifactId = sdkArtifactId
-            version = "0.0.1-debug"
-            afterEvaluate {
+    publishing {
+        publications {
+            val sdkGroupId = "com.github.kalevan"
+            val sdkArtifactId = "testlibrary"
+
+            create<MavenPublication>("debug") {
+//                groupId = sdkGroupId
+//                artifactId = sdkArtifactId
+//                version = "0.0.1-debug"
                 from(components["debug"])
+//                artifact("${layout.buildDirectory}/outputs/aar/testlibrary-debug.aar")
             }
-            artifact("$buildDir/outputs/aar/testlibrary-debug.aar")
         }
     }
 }
