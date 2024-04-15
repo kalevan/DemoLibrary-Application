@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "DemoLibrary Application"
 include(":app")
- 
+include(":testlibrary")
