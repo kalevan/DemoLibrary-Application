@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
+    `maven-publish`
 }
 
 android {
@@ -38,4 +39,21 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
+}
+
+publishing {
+    publications {
+        val sdkGroupId = "com.github.kalevan"
+        val sdkArtifactId = "testlibrary"
+
+        create<MavenPublication>("debug") {
+            groupId = sdkGroupId
+            artifactId = sdkArtifactId
+            version = "0.0.1-debug"
+            afterEvaluate {
+                from(components["debug"])
+            }
+            artifact("$buildDir/outputs/aar/testlibrary-debug.aar")
+        }
+    }
 }
