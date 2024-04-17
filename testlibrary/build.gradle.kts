@@ -61,13 +61,13 @@ afterEvaluate {
             create<MavenPublication>("debug") {
                 groupId = sdkGroupId
                 artifactId = sdkArtifactId
-                version = "0.0.6"
+                version = "0.0.8"
                 from(components["debug"])
             }
             create<MavenPublication>("release") {
                 groupId = sdkGroupId
                 artifactId = sdkArtifactId
-                version = "0.0.6"
+                version = "0.0.8"
                 from(components["release"])
             }
         }
