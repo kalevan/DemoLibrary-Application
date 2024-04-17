@@ -1,6 +1,7 @@
 package com.custom.testlibrary
 
 import android.util.Log
+import timber.log.Timber
 
 /**
  * Created by Michael Ruppen on 15.04.2024
@@ -11,8 +12,10 @@ class CustomFile(
 
     fun mySuperFun() {
         Log.d("TestLibrary", "Bool was: $testBool")
-        if (BuildConfig.DEBUG) {
-            Log.d("TestLibrary", "That is somme additional log for debug mode")
+        if (BuildConfig.BUILD_TYPE == "debug") {
+            Timber.plant(Timber.DebugTree())
         }
+
+        Timber.d("Log for debug only")
     }
 }

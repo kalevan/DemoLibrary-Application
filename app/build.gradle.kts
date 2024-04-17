@@ -61,7 +61,7 @@ dependencies {
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
-    implementation("com.github.kalevan:DemoLibrary-Application:0.0.6")
+    implementation("com.github.kalevan:DemoLibrary-Application:0.0.7")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
