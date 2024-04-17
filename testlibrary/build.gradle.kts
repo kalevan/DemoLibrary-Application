@@ -32,8 +32,6 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
-
-    setPublishNonDefault(true)
 }
 
 dependencies {
