@@ -11,10 +11,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.custom.demolibraryapplication.ui.theme.DemoLibraryApplicationTheme
+import com.custom.testlibrary.CustomFile
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val test = CustomFile(false)
+        test.mySuperFun()
         setContent {
             DemoLibraryApplicationTheme {
                 // A surface container using the 'background' color from the theme
