@@ -22,9 +22,9 @@ android {
     }
 
     buildTypes {
-//        debug {
-//            isMinifyEnabled = false
-//        }
+        debug {
+            isMinifyEnabled = false
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
@@ -60,8 +60,8 @@ dependencies {
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
-    implementation(project(":testlibrary"))
-//    implementation("com.github.kalevan:DemoLibrary-Application:0.0.3")
+//    implementation(project(":testlibrary"))
+    implementation("com.github.kalevan:DemoLibrary-Application:0.0.5")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)

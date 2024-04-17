@@ -51,19 +51,19 @@ afterEvaluate {
 
     publishing {
         publications {
-//            val sdkGroupId = "com.github.kalevan"
-//            val sdkArtifactId = "testlibrary"
+            val sdkGroupId = "com.github.kalevan"
+            val sdkArtifactId = "DemoLibrary-Application"
 
             create<MavenPublication>("debug") {
-//                groupId = sdkGroupId
-//                artifactId = sdkArtifactId
-//                version = "0.0.1-debug"
-
-
+                groupId = sdkGroupId
+                artifactId = sdkArtifactId
+                version = "0.0.6"
                 from(components["debug"])
-//                artifact("${layout.buildDirectory}/outputs/aar/testlibrary-debug.aar")
             }
             create<MavenPublication>("release") {
+                groupId = sdkGroupId
+                artifactId = sdkArtifactId
+                version = "0.0.6"
                 from(components["release"])
             }
         }
