@@ -11,5 +11,8 @@ class CustomFile(
 
     fun mySuperFun() {
         Log.d("TestLibrary", "Bool was: $testBool")
+        if (BuildConfig.DEBUG) {
+            Log.d("TestLibrary", "That is somme additional log for debug mode")
+        }
     }
 }
