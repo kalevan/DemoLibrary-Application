@@ -32,6 +32,8 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
+
+    setPublishNonDefault(true)
 }
 
 dependencies {
@@ -44,19 +46,27 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 }
 
+//group = ""
+//version = ""
+
 afterEvaluate {
 
     publishing {
         publications {
-            val sdkGroupId = "com.github.kalevan"
-            val sdkArtifactId = "testlibrary"
+//            val sdkGroupId = "com.github.kalevan"
+//            val sdkArtifactId = "testlibrary"
 
             create<MavenPublication>("debug") {
 //                groupId = sdkGroupId
 //                artifactId = sdkArtifactId
 //                version = "0.0.1-debug"
+
+
                 from(components["debug"])
 //                artifact("${layout.buildDirectory}/outputs/aar/testlibrary-debug.aar")
+            }
+            create<MavenPublication>("release") {
+                from(components["release"])
             }
         }
     }
